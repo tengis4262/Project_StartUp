@@ -1,7 +1,7 @@
 package scope.more;
 
 public class Ids {
-	static boolean isGoodId(String s){
+	public static boolean isGoodId(String s){
 		if(s == null) return false;
 		for(String t : goodIds){
 			if(s.equals(t)) return true;

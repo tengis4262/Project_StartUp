@@ -2,6 +2,7 @@ package scope;
 
 import java.util.Scanner;
 
+import scope.more.Ids;
 import scope.more.StoreDirectory;
 
 
@@ -17,9 +18,15 @@ public class Driver {
 		new Driver();
 	}
 	public Driver(){
+		boolean goodId;
+		do{
 		System.out.println("What is your Id? (An Id is a 3-digit code, like 009.)");
 		String userId = sc.nextLine();
 		this.userID = userId;
+		goodId =Ids.isGoodId(userId);
+		if (!goodId)
+			System.out.println("Wrong Id");
+		}while(!goodId);
 		directory = new StoreDirectory(this.userID);
 		String inputString = "Y";
 		String outputString = null;
